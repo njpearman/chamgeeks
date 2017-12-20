@@ -1,10 +1,11 @@
 section.header
-  h1 Cham Geeks
-  h2 Happy geeks in Chamonix!
+  .mask
+    h1 Cham Geeks
+    h2 Happy geeks in Chamonix!
 
-  - if(flash[:notice].present?)
-    p.notice
-      = flash[:notice]
+    - if(flash[:notice].present?)
+      p.notice
+        = flash[:notice]
 
 section
   p Join the Cham Geeks mailing list if you'd like more info about geeky things in the Chamonix Valley.

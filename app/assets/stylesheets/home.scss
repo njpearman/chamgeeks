@@ -33,13 +33,39 @@ section {
 
   .form_field {
     margin-bottom: 25px;
+
+    label {
+      font-size: x-large;
+      margin-right: 12px;
+    }
   }
 }
 
 section.header {
+  padding: 0;
   background-image: url(https://images.unsplash.com/photo-1504370164829-8c6ef0c41d06?auto=format&fit=crop&w=934&q=80);
   background-size: cover;
-  background-position: 0% 60%;
+  animation-duration: 25s;
+  animation-name: slidescreen;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  .mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.55);
+    padding: 2rem 0;
+  }
+}
+
+@keyframes slidescreen {
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 0% 100%;
+  }
 }
 
 @media screen and (min-width: 640px) {
