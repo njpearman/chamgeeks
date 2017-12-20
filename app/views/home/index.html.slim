@@ -3,16 +3,17 @@ section.header
     h1 Cham Geeks
     h2 Happy geeks in Chamonix!
 
-    - if(flash[:notice].present?)
-      p.notice
-        = flash[:notice]
+- if(flash[:notice].present?)
+  section
+    p.notice
+      = flash[:notice]
 
 section
   p Join the Cham Geeks mailing list if you'd like more info about geeky things in the Chamonix Valley.
   = form_with(model: @subscriber) do |form|
-    .form_field
+    .lone_field
       = form.text_field :email, placeholder: 'e.g. me@chamgeeks.com'
-    .form_field
+    .lone_field
       = form.submit 'Go!', class: 'button button-circle '
   h3 or
   p support us by becoming a member: it's only 10€ annually!
