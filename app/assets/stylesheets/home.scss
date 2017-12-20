@@ -1,3 +1,5 @@
+body {
+}
 section {
   font-family: $main-font;
   margin: 0 4rem;
@@ -12,4 +14,14 @@ section {
   h2 {
     margin: 0;
   }
+
+  input {
+    font-size: xx-large;
+  }
+}
+
+section.header {
+  background-image: url(https://images.unsplash.com/photo-1504370164829-8c6ef0c41d06?auto=format&fit=crop&w=934&q=80);
+  background-size: cover;
+  background-position: 0% 60%;
 }
