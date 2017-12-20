@@ -1,0 +1,25 @@
+- if(flash[:notice].present?)
+  section
+    p.notice
+      = flash[:notice]
+
+section
+  p
+    | Join the Cham Geeks mailing list to stay up-to-date with geeky things happening
+    | in the Chamonix Valley.
+  = form_with(model: @subscriber) do |form|
+    .lone_field
+      = form.text_field :email, placeholder: 'e.g. me@chamgeeks.com'
+    .lone_field
+      = form.submit 'Go!', class: 'button button-circle '
+  h3 or
+  p
+    | support us and join as a member: it's only 10€ annually and helps fund fun
+    | projects, seminars, and teaching in the Chamonix valley!
+  = link_to 'Join', new_membership_path, class: 'button button-circle button-action'
+
+section
+  p
+    | We are also on #{link_to 'Facebook', 'https://www.facebook.com/groups/chamgeeks/'},&nbsp;
+    | #{link_to 'Meetup', 'https://www.meetup.com/ChamGeeks/'} and&nbsp;
+    | #{link_to 'Twitter', 'https://twitter.com/ChamGeeks'}.

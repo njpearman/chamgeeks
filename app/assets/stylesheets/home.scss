@@ -1,0 +1,150 @@
+body {
+  font-family: $main-font;
+}
+
+section {
+  margin: 0 1rem;
+  padding: 2rem 0;
+  text-align: center;
+
+  h1 {
+    font-size: 4rem;
+    margin: 0;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  input {
+    font-size: x-large;
+    padding: 6px 12px 9px;
+    border-radius: 6px;
+    width: 90%;
+  }
+
+  .notice {
+    font-style: italic;
+  }
+
+  .lone_field {
+    margin-bottom: 24px;
+  }
+
+  .form_field {
+    margin: 0 0.3rem 25px 0.3rem;
+    display: block;
+
+    label {
+      flex: 0;
+      font-size: x-large;
+      margin-right: 12px;
+    }
+
+    input {
+      flex: 0;
+    }
+  }
+}
+
+section.header {
+  padding: 0;
+  background-image: url(https://images.unsplash.com/photo-1504370164829-8c6ef0c41d06?auto=format&fit=crop&w=934&q=80);
+  background-size: cover;
+  animation-duration: 25s;
+  animation-name: slidescreen;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  a {
+    color: $title-colour;
+  }
+  color: white;
+
+  .mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 3.4rem 0 2.4rem;
+  }
+}
+
+footer {
+  display: block;
+
+  p {
+    display: block;
+  }
+}
+
+.left, .right {
+  text-align: inherit;
+}
+
+@keyframes slidescreen {
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 0% 100%;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  section {
+    margin: 0 4rem;
+
+    p {
+      text-align: center;
+    }
+
+    input {
+      width: auto;
+    }
+
+    .form_field {
+      margin: 0 9rem 25px 9rem;
+      display: flex;
+      align-items: center;
+
+      label {
+        flex: 1;
+        text-align: right;
+      }
+
+      input {
+        flex: 6;
+        flex-shrink: 1;
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+
+    p {
+      flex: 1;
+    }
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .right {
+    text-align: right;
+  }
+}
