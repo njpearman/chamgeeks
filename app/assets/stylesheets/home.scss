@@ -1,3 +1,18 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+section {
+  font-family: 'Montserrat', sans-serif;
+  //font-family: 'Slabo 27px', serif;
+  //font-family: 'Roboto Mono', monospace;
+
+  margin: 0 4rem;
+  padding: 2rem 0;
+  text-align: center;
+
+  h1 {
+    font-size: 4rem;
+    margin: 0;
+  }
+
+  h2 {
+    margin: 0;
+  }
+}

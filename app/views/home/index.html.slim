@@ -1,14 +1,17 @@
-h1 Cham Geeks
-h2 Happy geeks in Chamonix!
+section
+  h1 Cham Geeks
+  h2 Happy geeks in Chamonix!
 
-p Join the Cham Geeks mailing list if you'd like more info about geeky things in the Chamonix Valley.
-= form_with(model: @subscriber) do |form|
-  = form.text_field :email
-  = form.submit 'Go!'
+  - if(flash[:notice].present?)
+    p.notice
+      = flash[:notice]
 
-- if(flash[:notice].present?)
-  p.notice
-    = flash[:notice]
+section
+  p Join the Cham Geeks mailing list if you'd like more info about geeky things in the Chamonix Valley.
+  = form_with(model: @subscriber) do |form|
+    = form.text_field :email
+    = form.submit 'Go!'
 
-p Or support us by becoming a member: it's only 10€ annually!
-= link_to 'Join', new_membership_path
+section
+  p Or support us by becoming a member: it's only 10€ annually!
+  = link_to 'Join', new_membership_path
