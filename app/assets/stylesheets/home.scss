@@ -1,8 +1,9 @@
 body {
 }
+
 section {
   font-family: $main-font;
-  margin: 0 4rem;
+  margin: 0 1rem;
   padding: 2rem 0;
   text-align: center;
 
@@ -16,7 +17,10 @@ section {
   }
 
   input {
-    font-size: xx-large;
+    font-size: x-large;
+    padding: 6px 12px 9px;
+    border-radius: 6px;
+    width: 90%;
   }
 }
 
@@ -24,4 +28,14 @@ section.header {
   background-image: url(https://images.unsplash.com/photo-1504370164829-8c6ef0c41d06?auto=format&fit=crop&w=934&q=80);
   background-size: cover;
   background-position: 0% 60%;
+}
+
+@media screen and (min-width: 640px) {
+  section {
+    margin: 0 4rem;
+
+    input {
+      width: auto;
+    }
+  }
 }
