@@ -6,9 +6,9 @@ p Join the Cham Geeks mailing list if you'd like more info about geeky things in
   = form.text_field :email
   = form.submit 'Go!'
 
-- if(flash[:info].present?)
-  p.info
-    = flash[:info]
+- if(flash[:notice].present?)
+  p.notice
+    = flash[:notice]
 
 p Or support us by becoming a member: it's only 10€ annually!
 = link_to 'Join', new_membership_path

@@ -1,8 +1,7 @@
 class SubscribersController < ApplicationController
   def create
     Subscriber.create subscriber_params
-    flash[:info] = "Thanks for subscribing!"
-    redirect_to root_path
+    redirect_to root_path, notice: "Thanks for subscribing!"
   end
 
   private
