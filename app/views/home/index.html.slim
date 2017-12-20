@@ -1,2 +1,10 @@
-h1 Home#index
-p Find me in app/views/home/index.html.slim
+h1 Cham Geeks
+h2 Happy geeks in Chamonix!
+
+p Join the Cham Geeks mailing list if you'd like more info about geeky things in the Chamonix Valley.
+= form_with(url: '#') do
+  = text_field_tag :email
+  = submit_tag 'Go!'
+
+p Or support us by becoming a member: it's only 10€ annually!
+= link_to 'Join', '#'
