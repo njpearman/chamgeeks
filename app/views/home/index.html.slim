@@ -13,7 +13,6 @@ section
       = form.text_field :email, placeholder: 'e.g. me@chamgeeks.com'
     .form_field
       = form.submit 'Go!', class: 'button button-circle '
-
-section
-  p Or support us by becoming a member: it's only 10€ annually!
+  h3 or
+  p support us by becoming a member: it's only 10€ annually!
   = link_to 'Join', new_membership_path, class: 'button button-circle button-action'

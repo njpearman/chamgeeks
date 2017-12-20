@@ -16,6 +16,14 @@ section {
     margin: 0;
   }
 
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    text-align: justify;
+  }
+
   input {
     font-size: x-large;
     padding: 6px 12px 9px;
@@ -38,6 +46,9 @@ section.header {
   section {
     margin: 0 4rem;
 
+    p {
+      text-align: center;
+    }
     input {
       width: auto;
     }
