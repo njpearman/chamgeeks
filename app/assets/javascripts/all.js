@@ -1,4 +1,4 @@
-window.onload = function () {
+document.addEventListener('turbolinks:load', function () {
   if(typeof(StripeCheckout) !== 'undefined') {
     var handler = StripeCheckout.configure({
       key: 'pk_test_YCWUf8yvww0W893I2lruWUGf',
@@ -29,4 +29,4 @@ window.onload = function () {
       handler.close();
     });
   }
-}
+});
