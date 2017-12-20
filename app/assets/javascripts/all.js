@@ -14,14 +14,25 @@ document.addEventListener('turbolinks:load', function () {
     });
 
     document.getElementById('joinAsMember').addEventListener('click', function(e) {
+      var form, email;
+
+      form = document.getElementById('membershipForm');
+
+      if(form.checkValidity() === false) {
+        return;
+      }
+
+      e.preventDefault();
+      email = document.getElementById('membershipEmail').value;
+
       // Open Checkout with further options:
       handler.open({
+        email: email,
         name: 'Cham Geeks',
         description: 'Membership for 2018',
         amount: 1000,
         currency: 'EUR'
       });
-      e.preventDefault();
     });
 
     // Close Checkout on page navigation:

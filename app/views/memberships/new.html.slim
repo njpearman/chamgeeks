@@ -1,3 +1,10 @@
 script src="https://checkout.stripe.com/checkout.js"
+. Complete your email and name below, then pay for membership by credit card via Stripe.
 = form_with url: memberships_path, id: 'membershipForm' do |form|
-  = form.submit 'Join!', id: 'joinAsMember'
+  .form_field
+    = form.label :email
+    = form.email_field :email, id: 'membershipEmail', required: true
+  .form_field
+    = form.label :name
+    = form.text_field :name, required: true
+  = form.submit 'Pay for membership', id: 'joinAsMember'
