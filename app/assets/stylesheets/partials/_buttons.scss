@@ -197,7 +197,14 @@ button#{$unicorn-btn-namespace}:disabled {
 //////////////////////////////////////////////////////////
 @each $unicorn-btn-style in $unicorn-btn-types {
 
-    // .button-rounded .button-pill button-circle
+    @if $unicorn-btn-style == 'circle' {
+      // .button-rounded .button-pill button-circle
+      input#{$unicorn-btn-namespace}-#{$unicorn-btn-style} {
+        width: $unicorn-btn-circle-size + 2*4px;
+        height: $unicorn-btn-circle-size + 2*4px;
+      }
+    }
+
     #{$unicorn-btn-namespace}-#{$unicorn-btn-style} {
 
         @if $unicorn-btn-style == 'rounded' {
