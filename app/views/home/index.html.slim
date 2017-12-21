@@ -9,7 +9,7 @@ section
     | in the Chamonix Valley.
   = form_with(model: @subscriber) do |form|
     .lone_field
-      = form.text_field :email, placeholder: 'e.g. me@chamgeeks.com'
+      = form.email_field :email, placeholder: 'e.g. me@chamgeeks.com', required: 'required'
     .lone_field
       = form.submit 'Go!', class: 'button button-circle '
   h3 or
