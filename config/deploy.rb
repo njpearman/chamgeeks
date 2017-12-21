@@ -29,34 +29,6 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 set :linked_files, %w(.env config/database.yml db/production.sqlite3)
 set :linked_dirs, %w(log uploads)
 
-namespace :assets do
-  desc 'Run the precompile task locally and rsync with shared'
-  task :precompile do
-
-    run_locally do
-			with rails_env: :production do
-				execute 'rm', '-rf public/assets/*'
-				rake 'assets:precompile'
-				execute 'touch', 'assets.tgz'
-				execute 'rm', 'assets.tgz'
-				execute 'tar', 'zcvf assets.tgz public/assets/'
-				execute 'mv', 'assets.tgz public/assets/'
-			end
-    end
-  end
-
-  desc 'Upload precompiled assets'
-  task :upload_assets do
-    on roles(:app) do
-      upload! "public/assets/assets.tgz", "#{release_path}/assets.tgz"
-      within release_path do
-        execute 'tar', 'zxvf assets.tgz'
-        execute  'rm', 'assets.tgz'
-      end
-    end
-  end
-end
-
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
   task :make_dirs do
@@ -123,12 +95,21 @@ namespace :deploy do
         end
       end
     end
+
+    desc 'Deletes the assets directory locally'
+    task :clean_local do
+      run_locally do
+        execute 'rm', '-rf public/assets/*'
+      end
+    end
+
+    after  :upload_assets, :clean_local
   end
 
 
-  before :starting,     :check_revision
-  after  :finishing,    :cleanup
-  after  :finishing,    :restart
+  before :starting,      :check_revision
+  after  :finishing,     :cleanup
+  after  :finishing,     :restart
 end
 
 before 'deploy:migrate', 'deploy:assets:precompile'
