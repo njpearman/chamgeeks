@@ -13,4 +13,7 @@ section
     .form_field
       = form.label :name
       = form.text_field :name, required: true
-    = form.submit 'Pay', id: 'joinAsMember', class: 'button button-circle button-action'
+    = form.submit 'Pay',
+                  id: 'joinAsMember',
+                  class: 'button button-circle button-action',
+                  disabled: 'disabled'

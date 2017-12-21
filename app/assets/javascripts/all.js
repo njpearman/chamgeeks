@@ -1,8 +1,9 @@
 document.addEventListener('turbolinks:load', function () {
   if(typeof(StripeCheckout) !== 'undefined') {
+    document.getElementById('joinAsMember').disabled = false;
     var handler = StripeCheckout.configure({
       key: ChamGeeks.config.stripeKey,
-      image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+      image: ChamGeeks.config.merchantGeekImage,
       locale: 'auto',
       token: function(token) {
         // You can access the token ID with `token.id`.
