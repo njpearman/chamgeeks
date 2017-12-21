@@ -1,6 +1,8 @@
 section
   script src="https://checkout.stripe.com/checkout.js"
   p Complete your email and name below, then pay for membership by credit card via Stripe.
+  p style="font-style: italic"
+    | We're currently testing this stuff.  It won't really work yet....
 section
   = form_with model: @membership, id: 'membershipForm' do |form|
     = form.hidden_field :year, id: 'yearOfMembership'
